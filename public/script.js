@@ -3,7 +3,7 @@ let previewContainer;
 let progressContainer;
 let resultContainer;
 let imageUrl;
-const API_URL = 'http://localhost:3000'; 
+const API_URL = 'https://cloud-image-uploader-1.onrender.com/'; 
 
 document.addEventListener('DOMContentLoaded', () => {
     const dropZone = document.getElementById('dropZone');
