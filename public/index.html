@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Image Uploader</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="upload-container">
+            <div class="upload-header">
+                <h1><i class="fas fa-cloud-upload-alt"></i> Cloud Image Uploader</h1>
+                <p>Upload your images to the cloud</p>
+            </div>
+            
+            <div class="upload-area" id="dropZone">
+                <div class="upload-content">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drag & Drop your image here</p>
+                    <p class="upload-subtext">or</p>
+                    <label for="fileInput" class="upload-button">Browse Files</label>
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                </div>
+            </div>
+
+            <div class="preview-container" id="previewContainer" style="display: none;">
+                <div class="preview-header">
+                    <h3>Preview</h3>
+                    <button class="close-button" onclick="clearPreview()"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="preview-content">
+                    <img id="imagePreview" src="" alt="Preview">
+                    <div class="preview-info">
+                        <p id="fileName"></p>
+                        <p id="fileSize"></p>
+                    </div>
+                </div>
+                <button class="upload-button" onclick="uploadFile()">Upload Image</button>
+            </div>
+
+            <div class="progress-container" id="progressContainer" style="display: none;">
+                <div class="progress-bar">
+                    <div class="progress" id="progressBar"></div>
+                </div>
+                <p id="progressText">Uploading...</p>
+            </div>
+
+            <div class="result-container" id="resultContainer" style="display: none;">
+                <div class="result-content">
+                    <i class="fas fa-check-circle success-icon"></i>
+                    <h3>Upload Successful!</h3>
+                    <p>Your image has been uploaded to the cloud.</p>
+                    <div class="image-url">
+                        <input type="text" id="imageUrl" readonly>
+                        <button onclick="copyUrl()"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <button class="upload-button" onclick="resetUploader()">Upload Another Image</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
